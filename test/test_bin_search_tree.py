@@ -23,8 +23,8 @@ def test_this_bin_search_tree():
     """
 
     tree = create_tree()
-    for i in range(100):
-        tree.insert(i, i)
+    for i in range(100000):
+        tree[randint(1, 1000)] = i
 
     min_key = - math.inf
     max_key = math.inf
@@ -103,9 +103,9 @@ def test_del_element():
 
     # test 1: delete all element in tree
     for i in range(100000):
-        tree[randint(1, 10000)] = i
+        tree[randint(0, 1000)] = i
 
-    for i in range(1, len(tree) + 1):
+    for i in range(len(tree)):
         del tree[i]
     assert len(tree) == 0
     tree.clear_tree()

@@ -92,7 +92,7 @@ class NodeTree:
                     self.parent.left = self.right
                 else:
                     self.parent.right = self.right
-                self.right.parent = self.right
+                self.right.parent = self.parent
 
     def __iter__(self):
         if self:
@@ -196,7 +196,7 @@ class BinSearchTree:
         # root is one element in tree
         elif self.size == 1 and self.root.key == key:
             self.root = None
-            self.size -= 1
+            self.size = 0
         else:
             raise KeyError('key not in tree.')
 
